@@ -17,19 +17,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void login(View view) {
-        TextView username = findViewById(R.id.editText1);
-        TextView password = findViewById(R.id.editText2);
-        String usernameString = username.getText().toString();
-        String passwordString = password.getText().toString();
-        Log.d(usernameString, passwordString);
-
-        if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
-
-            //correcct password
-        } else {
-            //wrong password
-        }
+    public void login1(View view) {
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
     }
 
 }
