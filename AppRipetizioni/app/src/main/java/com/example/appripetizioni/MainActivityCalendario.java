@@ -11,22 +11,18 @@ import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
 
-
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivityCalendario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main_calendario);
     }
 
-    public void login(View view){
+    public void logout(View view){
 
         class ServletCallMaterie extends AsyncTask<Void, Void, String> {
 
@@ -39,23 +35,16 @@ public class MainActivity2 extends AppCompatActivity {
             protected void onPostExecute(String s) {//dopo aver eseguito do in background avvio onPostExecute
                 super.onPostExecute(s);
                 Log.e("Stato","messaggio di risposta :"+ s);//scrivvo sul log
-                if (s.equals("Admin") || s.equals("Utente")) {
-                    Intent intent = new Intent(getApplicationContext(), MainActivityCalendario.class);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
 
             }
 
             @Override
             protected String doInBackground(Void... voids) {
                 try {
-                    TextView username = findViewById(R.id.editText1);
-                    TextView password = findViewById(R.id.editText2);
-                    String usernameString = username.getText().toString();
-                    String passwordString = password.getText().toString();
-                    Log.d(usernameString, passwordString);
 
-                    String urll = "http://192.168.1.105:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
+                    String urll = "http://192.168.1.105:8080/Ripetizioni/ServletLogin?azione=logout";
 
                     //connessione
                     //specifico i dati che voglio mandare direttamente nella chiamata
@@ -83,5 +72,7 @@ public class MainActivity2 extends AppCompatActivity {
         ServletCallMaterie servletCallMaterie = new ServletCallMaterie();
         servletCallMaterie.execute();
     }
+
+
 
 }
