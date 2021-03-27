@@ -44,8 +44,8 @@ public class MainActivityCalendario extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    //String urll = "http://192.168.1.105:8080/Ripetizioni/ServletLogin?azione=logout";
-                    String urll = "http://192.168.56.1:8080/Ripetizioni/ServletLogin?azione=logout";
+                    String urll = "http://192.168.1.105:8080/Ripetizioni/ServletLogin?azione=logout";
+                    //String urll = "http://192.168.56.1:8080/Ripetizioni/ServletLogin?azione=logout";
 
                     //connessione
                     //specifico i dati che voglio mandare direttamente nella chiamata
