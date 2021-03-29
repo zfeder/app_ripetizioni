@@ -56,11 +56,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {//dopo aver eseguito do in background avvio onPostExecute
                 super.onPostExecute(s);
-                Log.e("Stato","messaggio di risposta :"+ s);//scrivvo sul log
-
-
-
-
+                Log.e("Stato","messaggio di risposta :"+ s);//scrivvo sul logbbbb
 
 
 
