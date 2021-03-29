@@ -11,12 +11,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -36,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     public void Materie(View view){
 
         class ServletCallMaterie extends AsyncTask<Void, Void, String> {
@@ -45,14 +52,30 @@ public class MainActivity extends AppCompatActivity {
                 super.onPreExecute();
             }
 
+
             @Override
             protected void onPostExecute(String s) {//dopo aver eseguito do in background avvio onPostExecute
                 super.onPostExecute(s);
                 Log.e("Stato","messaggio di risposta :"+ s);//scrivvo sul log
 
 
-                List<String> list = new ArrayList<String>();
 
+
+
+
+
+
+
+
+                /*Gson materiegson = new Gson();
+                materie materiee = materiegson.fromJson(s, materie.class);
+
+                String jsonOutput = "[{\"titoloCorso\":,}]";
+                materie[] posts = materiegson.fromJson(jsonOutput, materie[].class);
+                Log.v("SteveMoretz", String.valueOf(posts.length)); */
+
+
+            /*
                 JSONArray cast = jsonResponse.getJSONArray("jsonarrayname");
                 for (int i=0; i<cast.length(); i++) {
                     JSONObject actor = cast.getJSONObject(i);
@@ -69,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         (android.R.layout.simple_spinner_dropdown_item);
 
                 spinner1.setAdapter(dataAdapter);
-
+             */
             }
 
 

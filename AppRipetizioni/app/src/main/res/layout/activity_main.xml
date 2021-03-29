@@ -14,6 +14,7 @@
         android:layout_marginBottom="640dp"
         android:onClick="login1"
         android:text="Login"
+        app:iconTint="#BD2828"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
