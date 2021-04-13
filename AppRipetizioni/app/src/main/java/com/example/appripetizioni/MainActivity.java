@@ -8,12 +8,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,15 +28,63 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private List<String> lista = new ArrayList<>();
+    private ArrayAdapter<String> adapter;
+    private Spinner spinner;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Materie(null);
+
+
+        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, lista);
+        spinner = findViewById(R.id.spinner);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
     }
 
     public void login1(View view) {
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
+    }
+
+    public class materie {
+        String titoloCorso;
+
+        public String getTitoloCorso() {
+            return this.titoloCorso;
+        }
+
+        public void setTitoloCorso(String titolocorso) {
+            this.titoloCorso = titolocorso;
+        }
+
+    }
+
+    public void getJson(String a) throws JSONException {
+        JSONArray jsonArray = new JSONArray(a);
+        String data = null;
+
+
+        for (int i=0; i<jsonArray.length(); i++) {
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            data = String.valueOf(jsonObject.get("titoloCorso"));
+            lista.add(data);
+        }
+
+        adapter.notifyDataSetChanged();
+        spinner.setAdapter(adapter);
+
+
+    }
+
+    public void getSelectedMateria (View v) {
+        String s = (String) spinner.getSelectedItem();
+        System.out.println(s);
+
     }
 
 
@@ -54,49 +99,24 @@ public class MainActivity extends AppCompatActivity {
 
 
             @Override
-            protected void onPostExecute(String s) {//dopo aver eseguito do in background avvio onPostExecute
-                super.onPostExecute(s);
-                Log.e("Stato","messaggio di risposta :"+ s);//scrivvo sul logbbbb
+            protected void onPostExecute(String prova) {//dopo aver eseguito do in background avvio onPostExecute
+                super.onPostExecute(prova);
+                Log.e("Stato","messaggio di risposta :"+ prova);//scrivvo sul log
 
-
-
-
-
-
-                /*Gson materiegson = new Gson();
-                materie materiee = materiegson.fromJson(s, materie.class);
-
-                String jsonOutput = "[{\"titoloCorso\":,}]";
-                materie[] posts = materiegson.fromJson(jsonOutput, materie[].class);
-                Log.v("SteveMoretz", String.valueOf(posts.length)); */
-
-
-            /*
-                JSONArray cast = jsonResponse.getJSONArray("jsonarrayname");
-                for (int i=0; i<cast.length(); i++) {
-                    JSONObject actor = cast.getJSONObject(i);
-                    String name = actor.getString("arrayelementname");
-                    allNames.add(name);
+                ArrayList<String> list = new ArrayList<String>();
+                try {
+                    getJson(prova);
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
 
-                Spinner spinner1 = (Spinner) findViewById(R.id.spinner);
-
-                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>
-                        (this, android.R.layout.simple_spinner_item,list);
-
-                dataAdapter.setDropDownViewResource
-                        (android.R.layout.simple_spinner_dropdown_item);
-
-                spinner1.setAdapter(dataAdapter);
-             */
             }
-
 
             @Override
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
                     //String urll = "http://192.168.56.1:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
 
                     //connessione
