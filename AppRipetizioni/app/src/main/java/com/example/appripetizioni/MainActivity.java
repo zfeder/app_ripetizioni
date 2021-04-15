@@ -1,13 +1,16 @@
 package com.example.appripetizioni;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
@@ -42,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
     private List<String> details = new ArrayList();
     private ArrayAdapter<String> adapter2;
 
+    AutoCompleteTextView autoCompleteTextView;
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,16 +57,22 @@ public class MainActivity extends AppCompatActivity {
         Materie(null);
 
 
+        autoCompleteTextView = findViewById(R.id.autoCompletText);
+
+        //String []option = {"Matematica" , "Italiano" , "Programmazione"};
+        ArrayAdapter arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.option_item, lista);
+        autoCompleteTextView.setText(arrayAdapter.getItem(0).toString(), false);
+
+        autoCompleteTextView.setAdapter(arrayAdapter);
 
 
 
-        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, lista);
-        spinner = findViewById(R.id.spinner);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 
-        listView1 = (ListView)findViewById(R.id.lv1);
-        adapter2 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, details);
+        //adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, lista);
+        //spinner = findViewById(R.id.spinner);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
 
 
 
@@ -144,8 +157,8 @@ public class MainActivity extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
-                    //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getMateria";
 
 
                     //connessione
@@ -203,8 +216,8 @@ public class MainActivity extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario"+ "&" + "value=" + s;
-                    //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getCalendario";
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario"+ "&" + "value=" + s;
+                    String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getCalendario" + "&" + "value=" + s;
 
 
                     //connessione

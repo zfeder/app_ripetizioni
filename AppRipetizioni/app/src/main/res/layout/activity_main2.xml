@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:textSize="40sp"
             android:textColor="#fff"
-            android:text="Welcome"/>
+            android:text="Welcome" />
 
     </LinearLayout>
 
