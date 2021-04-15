@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Spinner;
 
 
@@ -37,8 +38,9 @@ public class MainActivity extends AppCompatActivity {
     private List<String> lista = new ArrayList<>();
     private ArrayAdapter<String> adapter;
     private Spinner spinner;
- //   private ListView lv;
-
+    private ListView listView1;
+    private List<String> details = new ArrayList();
+    private ArrayAdapter<String> adapter2;
 
 
     @Override
@@ -48,10 +50,17 @@ public class MainActivity extends AppCompatActivity {
         Materie(null);
 
 
+
+
+
         adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, lista);
         spinner = findViewById(R.id.spinner);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-    //    lv = (ListView) findViewById(R.id.listview);
+
+
+        listView1 = (ListView)findViewById(R.id.lv1);
+        adapter2 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, details);
+
 
 
     }
@@ -80,45 +89,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getJsonCalendario(String a) throws JSONException, IOException {
+        CallCalendario(a);
 
-
-      /*  List<prenotazioni> testList = new ArrayList<>();
-
-        Gson gson = new Gson();
-
-        String json = gson.toJson(testList);
-
-        Type type = new TypeToken<ArrayList<prenotazioni>>(){}.getType();
-
-        ArrayList<prenotazioni> array = gson.fromJson(json, type); */
-
-
-        ObjectMapper mapper = new ObjectMapper();
+     /*   ObjectMapper mapper = new ObjectMapper();
 
         List<prenotazioni> details = mapper.readValue(a, new
                 TypeReference<List<prenotazioni>>() {      });
 
-        for (prenotazioni itr : details) {
-
-            System.out.println("Value for getFirstName is: " +
-                    itr.getIdDocente());
-            System.out.println("Value for getLastName  is: " +
-                    itr.getCognome());
-        }
-
-        /* Type listType = new TypeToken<ArrayList<prenotazioni>>() {}.getType();
-        Gson gson = new Gson();
-        String json = gson.toJson(a);
-        ArrayList<prenotazioni> obj = gson.fromJson(json, listType);
-        Log.d("JSONSAMPLE",""+obj);
-        prenotazioni el1 = obj.get(1);
-        Log.d("JSONSAMPLE",el1.getIdPrenotazione()+" "+ el1.getIdDocente()); */
-      /*  ArrayAdapter<prenotazioni> arrayAdapter2 = new ArrayAdapter<prenotazioni>(
-                this,
-                android.R.layout.simple_list_item_1, details);
-
-        lv.setAdapter(arrayAdapter2); */
-
+        adapter2.notifyDataSetChanged();  */
 
     }
 
@@ -128,6 +106,13 @@ public class MainActivity extends AppCompatActivity {
         Calendario(s);
 
 
+
+    }
+
+    public void CallCalendario(String a) {
+        Intent intent = new Intent(this, Calendario.class);
+        intent.putExtra("a", a);
+        startActivity(intent);
     }
 
 
@@ -159,8 +144,8 @@ public class MainActivity extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
-                    String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getMateria";
 
 
                     //connessione

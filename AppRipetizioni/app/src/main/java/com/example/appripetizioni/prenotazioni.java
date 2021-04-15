@@ -83,4 +83,9 @@ public class prenotazioni {
     public void setGiorno(String giorno) {
         this.giorno = giorno;
     }
+
+    public String toString()
+    {
+        return this.idCorso;
+    }
 }
