@@ -7,8 +7,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<String> lista = new ArrayList<>();
     private ArrayAdapter<String> adapter;
-    private Spinner spinner;
+    //private Spinner spinner;
     private ListView listView1;
     private List<String> details = new ArrayList();
     private ArrayAdapter<String> adapter2;
@@ -56,14 +58,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Materie(null);
 
-
-        autoCompleteTextView = findViewById(R.id.autoCompletText);
-
         //String []option = {"Matematica" , "Italiano" , "Programmazione"};
-        ArrayAdapter arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.option_item, lista);
-        autoCompleteTextView.setText(arrayAdapter.getItem(0).toString(), false);
+        autoCompleteTextView = findViewById(R.id.autoCompletText);
+        ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.option_item, lista);
+        //autoCompleteTextView.setText(adapter.getItem(0).toString(), false);
 
-        autoCompleteTextView.setAdapter(arrayAdapter);
+        autoCompleteTextView.setAdapter(adapter);
 
 
 
@@ -95,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
             lista.add(data);
         }
 
-        adapter.notifyDataSetChanged();
-        spinner.setAdapter(adapter);
+        //adapter.notifyDataSetChanged();
+        //autoCompleteTextView.setAdapter(adapter);
 
 
     }
@@ -113,12 +113,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void getSelectedMateria (View v) {
-        String s = (String) spinner.getSelectedItem();
+        AutoCompleteTextView source = (AutoCompleteTextView) findViewById(R.id.autoCompletText);
+        String s = source.getText().toString();
         System.out.println(s);
         Calendario(s);
-
-
 
     }
 
