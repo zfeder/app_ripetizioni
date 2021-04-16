@@ -6,12 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="50dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textColor="#fff"
+            android:textSize="40sp" />
+
+    </LinearLayout>
+
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:theme="@style/Autocomplete"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="320dp"
         android:layout_marginEnd="32dp"
         android:hint="Materie"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +43,7 @@
             android:id="@+id/autoCompletText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:theme="@style/Autocomplete"
             android:enabled="false"
             android:inputType="none"
             android:textColor="#000">
@@ -33,34 +54,39 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button1"
+        app:cornerRadius="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="640dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="170dp"
+        android:backgroundTint="#FFC107"
         android:onClick="login1"
         android:text="Login"
-        app:iconTint="#BD2828"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </com.google.android.material.button.MaterialButton>
 
 
-
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button2"
+        app:cornerRadius="15dp"
+        android:backgroundTint="#FFC107"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
         android:layout_marginBottom="460dp"
         android:onClick="getSelectedMateria"
         android:text="Seleziona"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+    </com.google.android.material.button.MaterialButton>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

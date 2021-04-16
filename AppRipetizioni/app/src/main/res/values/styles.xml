@@ -7,7 +7,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme2" parent="Theme.MaterialComponents.Light.NoActionBar">
-
+    <style name="Autocomplete">
+        <item name="colorControlNormal">@color/yellow</item>
+        <item name="colorControlActivated">@color/black</item>
     </style>
+
 </resources>

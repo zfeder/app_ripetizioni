@@ -14,17 +14,17 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class MainActivityCalendario extends AppCompatActivity {
+public class ActivityLogout extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_calendario);
+        setContentView(R.layout.activity_logout);
     }
 
     public void logout(View view){
 
-        class ServletCallMaterie extends AsyncTask<Void, Void, String> {
+        class ServletCallLogout extends AsyncTask<Void, Void, String> {
 
             @Override
             protected void onPreExecute() {
@@ -70,8 +70,8 @@ public class MainActivityCalendario extends AppCompatActivity {
                 }
             }
         }
-        ServletCallMaterie servletCallMaterie = new ServletCallMaterie();
-        servletCallMaterie.execute();
+        ServletCallLogout servletCallLogout = new ServletCallLogout();
+        servletCallLogout.execute();
     }
 
 

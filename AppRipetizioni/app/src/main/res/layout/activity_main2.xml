@@ -52,7 +52,7 @@
             android:id="@+id/button1"
             android:onClick="login"
             android:layout_marginTop="40dp"
-            android:layout_width="140dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:background="@drawable/buttonstylepink"
             android:text="Login"

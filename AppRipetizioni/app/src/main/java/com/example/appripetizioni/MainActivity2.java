@@ -40,7 +40,7 @@ public class MainActivity2 extends AppCompatActivity {
                 super.onPostExecute(s);
                 Log.e("Stato","messaggio di risposta :"+ s);//scrivvo sul log
                 if (s.equals("Admin") || s.equals("Utente")) {
-                    Intent intent = new Intent(getApplicationContext(), MainActivityCalendario.class);
+                    Intent intent = new Intent(getApplicationContext(), ActivityLogout.class);
                     startActivity(intent);
                 }
 
