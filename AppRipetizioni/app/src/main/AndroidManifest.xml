@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <activity android:name=".ActivityLogout">
+        <activity android:name=".ActivityLogout"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         </activity>
 
         <activity android:name=".Calendario">
