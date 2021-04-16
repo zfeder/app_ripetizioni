@@ -44,8 +44,8 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletLogin?azione=logout";
-                    String urll = "http://192.168.1.183:8080/Ripetizioni/ServletLogin?azione=logout";
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletLogin?azione=logout";
+                    //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletLogin?azione=logout";
 
                     //connessione
                     //specifico i dati che voglio mandare direttamente nella chiamata

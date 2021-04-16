@@ -50,14 +50,15 @@
 
         <Button
             android:id="@+id/button1"
-            android:onClick="login"
-            android:layout_marginTop="40dp"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:background="@drawable/buttonstylepink"
+            android:backgroundTint="#636363"
+            android:drawableRight="@drawable/ic_outline_send_24"
+            android:onClick="login"
             android:text="Login"
-            android:textColor="#fff"
-            android:drawableRight="@drawable/ic_outline_send_24">
+            android:textColor="#fff">
 
         </Button>
     </LinearLayout>
