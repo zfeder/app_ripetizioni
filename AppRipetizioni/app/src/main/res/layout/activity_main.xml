@@ -56,6 +56,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button1"
+        app:cornerRadius="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="300dp"
@@ -64,30 +65,27 @@
         android:onClick="login1"
         android:text="Login"
         android:textColor="@android:color/white"
-        app:cornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
     </com.google.android.material.button.MaterialButton>
 
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button2"
+        app:cornerRadius="15dp"
+        android:backgroundTint="#636363"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:layout_marginBottom="460dp"
-        android:backgroundTint="#636363"
         android:onClick="getSelectedMateria"
         android:text="Seleziona"
         android:textColor="@android:color/white"
-        app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
-
     </com.google.android.material.button.MaterialButton>
 
 

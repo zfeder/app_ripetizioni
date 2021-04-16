@@ -27,18 +27,17 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button1"
         app:cornerRadius="15dp"
+        android:backgroundTint="#636363"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="290dp"
-        android:textColor="@android:color/white"
         android:layout_marginTop="170dp"
-        android:backgroundTint="#636363"
         android:onClick="logout"
         android:text="Logout"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
-
     </com.google.android.material.button.MaterialButton>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
