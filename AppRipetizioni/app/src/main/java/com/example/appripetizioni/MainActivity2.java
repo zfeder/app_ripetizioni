@@ -56,7 +56,9 @@ public class MainActivity2 extends AppCompatActivity {
                     Log.d(usernameString, passwordString);
 
                     //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
+                    //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
                     String urll = "http://192.168.1.165:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
+
 
                     //connessione
                     //specifico i dati che voglio mandare direttamente nella chiamata
