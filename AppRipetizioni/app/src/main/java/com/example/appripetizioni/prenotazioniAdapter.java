@@ -7,32 +7,45 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+
 import java.util.ArrayList;
 
-public class prenotazioniAdapter extends ArrayAdapter<prenotazioni> {
 
-    public prenotazioniAdapter(Activity context, ArrayList<prenotazioni> Prenotazioni) {
-        super(context, 0,Prenotazioni);
+public class prenotazioniAdapter extends ArrayAdapter<  Prenotazioni> {
+
+
+    public prenotazioniAdapter(Activity context, ArrayList<Prenotazioni> carsDetails){
+        super(context, 0, carsDetails);
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
 
         View listItemView = convertView;
         if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+            listItemView = LayoutInflater.from(getContext()).inflate(
+                    R.layout.list_item, parent, false
+            );
         }
 
-        prenotazioni Prenotazioni = getItem(position);
+        Prenotazioni prenotazione = getItem(position);
 
-        TextView idDocente = (TextView) listItemView.findViewById(R.id.iDocente);
-        idDocente.setText(Prenotazioni.getIdDocente());
+        TextView nomeTv = (TextView) listItemView.findViewById(R.id.nome);
+        nomeTv.setText(prenotazione.getNomeP());
 
-        TextView Giorno = (TextView) listItemView.findViewById(R.id.Giorno);
-        Giorno.setText(Prenotazioni.getGiorno());
+        TextView cognomeTv = (TextView) listItemView.findViewById(R.id.cognome);
+        cognomeTv.setText(prenotazione.getCognome());
 
-        TextView Ora = (TextView) listItemView.findViewById(R.id.Ora);
-        Ora.setText(Prenotazioni.getOrario());
+        TextView orarioTv = (TextView) listItemView.findViewById(R.id.orario);
+        orarioTv.setText(prenotazione.getGiorno());
+
+        TextView dataTv = (TextView) listItemView.findViewById(R.id.data);
+        dataTv.setText(prenotazione.getOrario());
+
+        TextView materiaTv = (TextView) listItemView.findViewById(R.id.materia);
+        materiaTv.setText(prenotazione.getIdCorso());
+
 
         return listItemView;
     }

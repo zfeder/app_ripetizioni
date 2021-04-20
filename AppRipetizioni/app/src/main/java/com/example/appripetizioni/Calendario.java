@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -27,62 +28,52 @@ public class Calendario extends AppCompatActivity {
         Intent intent = getIntent();
         String a = intent.getExtras().getString("a");
 
+        ArrayList<Prenotazioni> prenotazioni = null;
+        prenotazioni = extractPrenotazioni(a);
 
 
-        ArrayList<prenotazioni> Prenotazioni = new ArrayList<>();
+        ListView prenotazionilv = (ListView) findViewById(R.id.lv1);
+
+        prenotazioniAdapter adapter = new prenotazioniAdapter(this, prenotazioni);
+
+        prenotazionilv.setAdapter(adapter);
+
+    }
+
+    public static ArrayList<Prenotazioni> extractPrenotazioni(String s) {
+
+        ArrayList<Prenotazioni> prenota = new ArrayList<>();
 
         try {
-            JSONObject jsonRootObject = new JSONObject(a);
-            JSONArray jsonArray = jsonRootObject.getJSONArray("prenotazionis");
+            JSONObject jsonRootObject = new JSONObject(s);
+            JSONArray jsonArray = jsonRootObject.getJSONArray("prenotazioni");
 
-            for (int i = 0; i<jsonArray.length(); i++) {
+            for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                String idDocente = jsonObject.optString("idDocente");
-                String Giorno = jsonObject.optString("Giorno");
-                String Orario = jsonObject.optString("Orario");
 
-                prenotazioni Prenota = new prenotazioni(null, null, idDocente, null, null, null, null, Orario, Giorno);
+                String nome = jsonObject.getString("nomeP");
+                String cognome = jsonObject.getString("cognome");
+                String orario = jsonObject.getString("orario");
+                String data = jsonObject.getString("giorno");
+                String corso = jsonObject.getString("idCorso");
 
-                Prenotazioni.add(Prenota);
 
+                Prenotazioni prenotalv = new Prenotazioni(corso, cognome, nome,  orario, data);
+
+                prenota.add(prenotalv);
 
             }
+
+
         } catch (JSONException e) {
-            e.printStackTrace();
+            Log.e("QueryUtils","Problem loading JSON");
         }
 
-        ListView prenotazioniLV = (ListView) findViewById(R.id.lv1);
+        return prenota;
 
-        prenotazioniAdapter Adapter = new prenotazioniAdapter(this, Prenotazioni);
-
-        prenotazioniLV.setAdapter(Adapter);
-
-     /*   String details = null;
-        JSONArray jsonArray = null;
-        try {
-            jsonArray = new JSONArray(a);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
-        for (int i =0; i<jsonArray.length(); i++)  {
-            JSONObject jsonObject = null;
-            try {
-                jsonObject = jsonArray.getJSONObject(i);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            try {
-                details = String.valueOf(jsonObject.get("idPrenotazione"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            lista.add(details);
-        }
-
-        adapter.notifyDataSetChanged(); */
     }
+
+
 
 }

@@ -1,33 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:minHeight="?android:attr/listPreferredItemHeight"
-    android:padding="13dp">
+    android:padding="13dp"
+    android:layout_marginTop="20dp"
+    android:weightSum="3"
+    android:orientation="horizontal">
+
+
+
 
     <TextView
-        android:id="@+id/iDocente"
+        android:id="@+id/nome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        tools:ignore="Suspicious0dp"
-        tools:text="Docente" />
+        android:layout_weight="0.6"
+        android:textColor="@color/colorAccent"
+        android:textSize="19sp"
+        android:textStyle="italic"
+        tools:text="Nome" />
 
     <TextView
-        android:id="@+id/Giorno"
+        android:id="@+id/cognome"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        tools:ignore="Suspicious0dp"
-        tools:text="Giorno" />
+        android:layout_weight="0.7"
+        android:textStyle="italic"
+        android:textColor="@color/colorAccent"
+        android:textSize="19sp"
+        tools:text = "Cognome"
+        android:layout_height="wrap_content" />
+
 
     <TextView
-        android:id="@+id/Ora"
+        android:id="@+id/orario"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        tools:ignore="Suspicious0dp"
-        tools:text="Ora" />
+        android:layout_weight="0.6"
+        android:textStyle="italic"
+        android:textColor="@color/colorAccent"
+        android:textSize="19sp"
+        tools:text = "Orario"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/materia"
+        android:layout_width="0dp"
+        android:layout_weight="0.8"
+        android:textStyle="italic"
+        android:textColor="@color/colorAccent"
+        android:textSize="19sp"
+        tools:text = "Materia"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:textStyle="italic"
+        android:textColor="@color/colorAccent"
+        android:textSize="19sp"
+        tools:text = "Data"
+        android:layout_height="wrap_content" />
+
+
 
 </LinearLayout>

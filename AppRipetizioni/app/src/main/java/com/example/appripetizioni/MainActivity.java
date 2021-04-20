@@ -157,10 +157,8 @@ public class MainActivity extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getMateria";
-                    String urll = "http://192.168.1.165:8080/Ripetizioni/ServletJSON?azione=getMateria";
-
 
 
                     //connessione
@@ -218,9 +216,8 @@ public class MainActivity extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario"+ "&" + "value=" + s;
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getCalendario" + "&" + "value=" + s;
-                    String urll = "http://192.168.1.165:8080/Ripetizioni/ServletJSON?azione=getCalendario" + "&" + "value=" + s;
 
 
                     //connessione
