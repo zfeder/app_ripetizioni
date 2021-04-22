@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView1;
     private List<String> details = new ArrayList();
     private ArrayAdapter<String> adapter2;
+    private String nomeMateria;
 
     AutoCompleteTextView autoCompleteTextView;
 
@@ -83,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     public void getJson(String a) throws JSONException {
         JSONArray jsonArray = new JSONArray(a);
         String data = null;
@@ -113,21 +113,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     public void getSelectedMateria (View v) {
         AutoCompleteTextView source = (AutoCompleteTextView) findViewById(R.id.autoCompletText);
-        String s = source.getText().toString();
-        System.out.println(s);
-        Calendario(s);
+        nomeMateria = source.getText().toString();
+        System.out.println(nomeMateria);
+        Calendario(nomeMateria);
 
     }
 
     public void CallCalendario(String a) {
         Intent intent = new Intent(this, Calendario.class);
         intent.putExtra("a", a);
+        intent.putExtra("nomeMateria", nomeMateria);
         startActivity(intent);
     }
-
 
     public void Materie(View view){
 

@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.gson.internal.$Gson$Types;
 
@@ -27,9 +30,13 @@ public class Calendario extends AppCompatActivity {
         setContentView(R.layout.activity_calendario);
         Intent intent = getIntent();
         String a = intent.getExtras().getString("a");
+        String nomeMateria = intent.getExtras().getString("nomeMateria");
 
         ArrayList<Prenotazioni> prenotazioni = null;
         prenotazioni = extractPrenotazioni(a);
+
+        TextView materiaTv = (TextView) findViewById(R.id.materia);
+        materiaTv.setText(nomeMateria);
 
 
         ListView prenotazionilv = (ListView) findViewById(R.id.lv1);
@@ -73,6 +80,14 @@ public class Calendario extends AppCompatActivity {
         return prenota;
 
     }
+
+   /* public void prenota (View v) {
+        AutoCompleteTextView source = (AutoCompleteTextView) findViewById(R.id.autoCompletText);
+        String s = source.getText().toString();
+        System.out.println(s);
+        Calendario(s);
+
+    } */
 
 
 
