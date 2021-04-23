@@ -7,29 +7,33 @@
 
     <TextView
         android:id="@+id/materia"
-        android:layout_width="109dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:text="Materia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="160dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="MATERIA"
+        android:textSize="30sp"
         android:textColor="@color/colorAccent">
 
     </TextView>
 
-
     <TextView
-        android:layout_width="81dp"
+        android:layout_width="50dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="100dp"
-        android:layout_weight="0.9"
+        android:layout_weight="0.8"
         android:text="NOME"
-        android:textColor="@color/colorAccent"></TextView>
+        android:textColor="@color/colorAccent">
+
+    </TextView>
 
     <TextView
-        android:layout_width="110dp"
+        android:layout_width="70dp"
         android:layout_height="38dp"
-        android:layout_marginStart="96dp"
+        android:layout_marginStart="65dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="100dp"
         android:layout_weight="0.6"
@@ -39,25 +43,25 @@
     </TextView>
 
     <TextView
-        android:layout_width="65dp"
+        android:layout_width="55dp"
         android:layout_height="38dp"
-        android:layout_marginStart="208dp"
+        android:layout_marginStart="155dp"
         android:layout_marginLeft="200dp"
         android:layout_marginTop="100dp"
         android:layout_weight="0.6"
-        android:text="ORARIO"
+        android:text="GIORNO"
         android:textColor="@color/colorAccent">
 
     </TextView>
 
     <TextView
-        android:layout_width="65dp"
+        android:layout_width="55dp"
         android:layout_height="38dp"
-        android:layout_marginStart="306dp"
+        android:layout_marginStart="240dp"
         android:layout_marginLeft="300dp"
         android:layout_marginTop="100dp"
         android:layout_weight="0.6"
-        android:text="DATA"
+        android:text="ORARIO"
         android:textColor="@color/colorAccent">
     </TextView>
 
@@ -67,7 +71,7 @@
         android:id="@+id/lv1"
         android:orientation="vertical"
         android:layout_height="match_parent"
-        android:layout_marginTop="200dp">
+        android:layout_marginTop="130dp">
     </ListView>
 
 </RelativeLayout>
