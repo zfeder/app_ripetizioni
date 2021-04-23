@@ -13,8 +13,8 @@ public class Prenotazioni {
     private String giorno;
 
 
-    public Prenotazioni(String idCorso, String cognome, String nomeP, String orario, String giorno) {
-        this.idCorso = idCorso;
+    public Prenotazioni(String idPrenotazione, String cognome, String nomeP, String orario, String giorno) {
+        this.idPrenotazione = idPrenotazione;
         this.cognome = cognome;
         this.nomeP = nomeP;
         this.orario = orario;

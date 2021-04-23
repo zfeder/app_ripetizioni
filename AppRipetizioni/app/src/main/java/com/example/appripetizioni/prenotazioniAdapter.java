@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -42,6 +43,10 @@ public class prenotazioniAdapter extends ArrayAdapter<  Prenotazioni> {
 
         TextView dataTv = (TextView) listItemView.findViewById(R.id.data);
         dataTv.setText(prenotazione.getOrario());
+
+        Button materiaTv = (Button) listItemView.findViewById(R.id.materia);
+        materiaTv.setTag(prenotazione.getIdPrenotazione());
+
 
 
 

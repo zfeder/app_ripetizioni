@@ -3,11 +3,13 @@ package com.example.appripetizioni;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,6 +19,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,10 +69,10 @@ public class Calendario extends AppCompatActivity {
                 String cognome = jsonObject.getString("cognome");
                 String orario = jsonObject.getString("orario");
                 String data = jsonObject.getString("giorno");
-                String corso = jsonObject.getString("idCorso");
+                String idPrenotazione = jsonObject.getString("idPrenotazione");
 
 
-                Prenotazioni prenotalv = new Prenotazioni(corso, cognome, nome,  orario, data);
+                Prenotazioni prenotalv = new Prenotazioni(idPrenotazione, cognome, nome,  orario, data);
 
                 prenota.add(prenotalv);
 
@@ -81,13 +87,67 @@ public class Calendario extends AppCompatActivity {
 
     }
 
-   /* public void prenota (View v) {
-        AutoCompleteTextView source = (AutoCompleteTextView) findViewById(R.id.autoCompletText);
-        String s = source.getText().toString();
-        System.out.println(s);
-        Calendario(s);
+   public void prenota (View v) {
+       Button b = (Button)v;
+       String a = b.getTag().toString();
+       Log.e("Tag bottone", "" + a);//scrivvo sul log
+       prenotaDB(a);
+   }
 
-    } */
+    public void prenotaDB(String a){
+
+        class ServletCallMaterie extends AsyncTask<Void, Void, String> {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String s) {//dopo aver eseguito do in background avvio onPostExecute
+                super.onPostExecute(s);
+                Log.e("Stato","messaggio di risposta :"+ s);//scrivvo sul log
+
+
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                try {
+
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=Prenota" + "&" + "idPrenotazione=" + a;
+                    //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
+                    //String urll = "http://192.168.1.165:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
+
+
+                    //connessione
+                    //specifico i dati che voglio mandare direttamente nella chiamata
+                    URL url = new URL(urll);
+
+
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();//apro la connessione
+
+                    StringBuilder js = new StringBuilder();
+                    BufferedReader buff = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                    String listJson;
+                    while((listJson = buff.readLine()) != null){
+                        js.append(listJson + "\n");
+                    }
+                    buff.close();
+                    //con.setDoInput(false);
+                    con.disconnect();
+                    return js.toString().trim();
+                } catch (Exception a) {
+                    System.out.println("Errore cercando di prendere le materie dalla servlet --------------> " + a);
+                    return null;
+                }
+            }
+        }
+        ServletCallMaterie servletCallMaterie = new ServletCallMaterie();
+        servletCallMaterie.execute();
+    }
+
+
 
 
 
