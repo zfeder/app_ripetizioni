@@ -26,7 +26,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calendario extends AppCompatActivity {
+public class ActivityCalendario extends AppCompatActivity {
 
 
 
@@ -87,12 +87,12 @@ public class Calendario extends AppCompatActivity {
 
     }
 
-   public void prenota (View v) {
-       Button b = (Button)v;
-       String a = b.getTag().toString();
-       Log.e("Tag bottone", "" + a);//scrivvo sul log
-       prenotaDB(a);
-   }
+    public void prenota (View v) {
+        Button b = (Button)v;
+        String a = b.getTag().toString();
+        Log.e("Tag bottone", "" + a);//scrivvo sul log
+        prenotaDB(a);
+    }
 
     public void prenotaDB(String a){
 

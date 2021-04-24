@@ -3,6 +3,7 @@ package com.example.appripetizioni;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void CallCalendario(String a) {
-        Intent intent = new Intent(this, Calendario.class);
+        Intent intent = new Intent(this, ActivityCalendario.class);
         intent.putExtra("a", a);
         intent.putExtra("nomeMateria", nomeMateria);
         startActivity(intent);

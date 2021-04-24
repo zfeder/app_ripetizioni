@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".StoricoPrenotazioni"></activity>
+        <activity android:name=".ActivityCalendario"></activity>
+        <activity android:name=".StoricoPrenotazioni" />
         <activity android:name=".PrenotazioniAttive" />
         <activity
             android:name=".ActivityLogin"
