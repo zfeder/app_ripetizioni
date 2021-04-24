@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login1(View view) {
-        Intent intent = new Intent(this, MainActivity2.class);
+        Intent intent = new Intent(this, ActivityLogin.class);
         startActivity(intent);
     }
 
@@ -97,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
 
         //adapter.notifyDataSetChanged();
         //autoCompleteTextView.setAdapter(adapter);
-
 
     }
 
@@ -156,9 +155,9 @@ public class MainActivity extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getMateria";
-                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getMateria";
 
 
 
@@ -217,9 +216,9 @@ public class MainActivity extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getCalendario" + "&" + "value=" + s;
-                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
+                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
 
 
 

@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -45,6 +47,8 @@ public class ActivityLogout extends AppCompatActivity {
 
     }
 
+  
+
     public void logout(View view){
 
         class ServletCallLogout extends AsyncTask<Void, Void, String> {
@@ -67,9 +71,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletLogin?azione=logout";
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletLogin?azione=logout";
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletLogin?azione=logout";
-                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletLogin?azione=logout";
+                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletLogin?azione=logout";
 
                     //connessione
                     //specifico i dati che voglio mandare direttamente nella chiamata
@@ -126,9 +130,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getCalendario" + "&" + "value=" + s;
-                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
+                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
 
 
 
@@ -214,9 +218,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getMateria";
-                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getMateria";
 
 
 
@@ -260,11 +264,37 @@ public class ActivityLogout extends AppCompatActivity {
 
         //adapter.notifyDataSetChanged();
         //autoCompleteTextView.setAdapter(adapter);
-
-
     }
 
+    public void showPopup(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        popup.inflate(R.menu.popup_menu);
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+                switch(item.getItemId()) {
+                    case R.id.one:
+                        prenotazioniAttive(v);
+                        return true;
+                    case R.id.two:
+                        storicoPrenotazioni(v);
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+        popup.show();
+    }
 
+    public void prenotazioniAttive(View view) {
+        Intent intent = new Intent(this, PrenotazioniAttive.class);
+        startActivity(intent);
+    }
+
+    public void storicoPrenotazioni(View view) {
+        Intent intent2 = new Intent(this, StoricoPrenotazioni.class);
+        startActivity(intent2);
+    }
 
 
 
