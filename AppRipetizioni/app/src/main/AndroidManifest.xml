@@ -12,16 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ActivityCalendario"></activity>
-        <activity android:name=".StoricoPrenotazioni" />
-        <activity android:name=".PrenotazioniAttive" />
+
+        <activity android:name=".ActivityCalendario">
+        </activity>
+
+        <activity android:name=".StoricoPrenotazioni">
+        </activity>
+
+        <activity android:name=".PrenotazioniAttive">
+        </activity>
+
         <activity
             android:name=".ActivityLogin"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+
         <activity
             android:name=".ActivityLogout"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
-        <activity android:name=".Calendario" />
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+        </activity>
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
@@ -31,6 +41,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
