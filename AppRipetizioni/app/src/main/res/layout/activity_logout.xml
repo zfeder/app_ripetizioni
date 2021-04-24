@@ -78,6 +78,7 @@
 
     </com.google.android.material.button.MaterialButton>
 
+
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,7 +103,7 @@
         android:layout_marginTop="240dp"
         android:layout_marginBottom="460dp"
         android:backgroundTint="#636363"
-        android:onClick="getSelectedMateria"
+        android:onClick="getMiePrenotazioni"
         android:text="Seleziona"
         android:textColor="@android:color/white"
         app:cornerRadius="15dp"

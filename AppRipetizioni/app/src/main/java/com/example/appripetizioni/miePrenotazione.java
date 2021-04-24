@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import static com.example.appripetizioni.ActivityCalendario.extractPrenotazioni;
 
-public class PrenotazioniAttive extends AppCompatActivity {
+public class miePrenotazione extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

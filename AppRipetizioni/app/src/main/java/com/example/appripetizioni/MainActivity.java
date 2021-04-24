@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
     private List<String> lista = new ArrayList<>();
     private ArrayAdapter<String> adapter;
-    //private Spinner spinner;
     private ListView listView1;
     private List<String> details = new ArrayList();
     private ArrayAdapter<String> adapter2;
@@ -60,21 +59,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Materie(null);
 
-        //String []option = {"Matematica" , "Italiano" , "Programmazione"};
         autoCompleteTextView = findViewById(R.id.autoCompletText);
         ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.option_item, lista);
-        //autoCompleteTextView.setText(adapter.getItem(0).toString(), false);
 
         autoCompleteTextView.setAdapter(adapter);
-
-
-
-
-
-        //adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, lista);
-        //spinner = findViewById(R.id.spinner);
-        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
 
 
 
@@ -156,9 +144,9 @@ public class MainActivity extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getMateria";
-                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getMateria";
 
 
 
@@ -216,10 +204,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected String doInBackground(Void... voids) {
                 try {
-
-                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getCalendario" + "&" + "value=" + s;
-                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
+                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
 
 
 
