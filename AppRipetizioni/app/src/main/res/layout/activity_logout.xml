@@ -103,7 +103,7 @@
         android:layout_marginTop="240dp"
         android:layout_marginBottom="460dp"
         android:backgroundTint="#636363"
-        android:onClick="getMiePrenotazioni"
+        android:onClick="getSelectedMateria"
         android:text="Seleziona"
         android:textColor="@android:color/white"
         app:cornerRadius="15dp"
