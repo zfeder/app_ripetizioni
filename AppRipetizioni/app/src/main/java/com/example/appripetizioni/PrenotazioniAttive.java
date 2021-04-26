@@ -26,7 +26,7 @@ public class PrenotazioniAttive extends AppCompatActivity {
 
         ListView prenotazionilv = (ListView) findViewById(R.id.lv1);
 
-        miePrenotazioniAdapter adapter = new miePrenotazioniAdapter(this, prenotazioni);
+        prenotazioniAttiveAdapter adapter = new prenotazioniAttiveAdapter(this, prenotazioni);
 
         prenotazionilv.setAdapter(adapter);
 
