@@ -12,10 +12,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class prenotazioniAttiveAdapter extends ArrayAdapter<Prenotazioni> {
+public class storicoPrenotazioniAdapter extends ArrayAdapter<Prenotazioni> {
 
 
-    public prenotazioniAttiveAdapter(Activity context, ArrayList<Prenotazioni> carsDetails){
+    public storicoPrenotazioniAdapter(Activity context, ArrayList<Prenotazioni> carsDetails){
         super(context, 0, carsDetails);
     }
 
@@ -26,7 +26,7 @@ public class prenotazioniAttiveAdapter extends ArrayAdapter<Prenotazioni> {
         View listItemView = convertView;
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_item_prenotazioni_attive, parent, false
+                    R.layout.list_item_storico_prenotazioni, parent, false
             );
         }
 
@@ -44,17 +44,8 @@ public class prenotazioniAttiveAdapter extends ArrayAdapter<Prenotazioni> {
         TextView dataTv = (TextView) listItemView.findViewById(R.id.data);
         dataTv.setText(prenotazione.getOrario());
 
-    /*    TextView materiaTv = (TextView) listItemView.findViewById(R.id.materia);
+     /*   TextView materiaTv = (TextView) listItemView.findViewById(R.id.materia);
         materiaTv.setText(prenotazione.getIdCorso()); */
-
-         Button disdiciTv = (Button) listItemView.findViewById(R.id.disdici);
-        disdiciTv.setTag(prenotazione.getIdPrenotazione());
-
-        Button svoltaTv = (Button) listItemView.findViewById(R.id.svolta);
-        svoltaTv.setTag(prenotazione.getIdPrenotazione());
-
-
-
 
         return listItemView;
     }

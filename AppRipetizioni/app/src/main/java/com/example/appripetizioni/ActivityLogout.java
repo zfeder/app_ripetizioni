@@ -48,7 +48,7 @@ public class ActivityLogout extends AppCompatActivity {
 
     }
 
-  
+
 
     public void logout(View view){
 
@@ -280,12 +280,83 @@ public class ActivityLogout extends AppCompatActivity {
     }
 
     public void prenotazioniAttive(View view) {
-         miePrenotazioni();
+        miePrenotazioni();
     }
 
-    public void storicoPrenotazioni(View view) {
-        Intent intent2 = new Intent(this, StoricoPrenotazioni.class);
-        startActivity(intent2);
+    public void storicoPrenotazioni(View view) { mieStorico(); }
+
+    public void mieStorico() {
+
+        class ServletCallmiePrenotazioni extends AsyncTask<Void, Void, String> {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+
+            @Override
+            protected void onPostExecute(String prova) {//dopo aver eseguito do in background avvio onPostExecute
+                super.onPostExecute(prova);
+                Log.e("Stato","messaggio di risposta :"+ prova);//scrivvo sul log
+
+                ArrayList<String> list = new ArrayList<String>();
+                try {
+                    getJsonStorico(prova);
+                } catch (JSONException | IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                try {
+
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=Storico";
+                    //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getCalendario" + "&" + "value=" + s;
+                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletShow?azione=Storico";
+
+
+
+
+                    //connessione
+                    //specifico i dati che voglio mandare direttamente nella chiamata
+                    URL url = new URL(urll);
+
+
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();//apro la connessione
+
+                    StringBuilder js = new StringBuilder();
+                    BufferedReader buff = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                    String listJson;
+                    while((listJson = buff.readLine()) != null){
+                        js.append(listJson + "\n");
+                    }
+                    buff.close();
+                    //con.setDoInput(false);
+                    con.disconnect();
+                    return js.toString().trim();
+                } catch (Exception a) {
+                    System.out.println("Errore cercando di prendere le materie dalla servlet --------------> " + a);
+                    return null;
+                }
+            }
+        }
+        ServletCallmiePrenotazioni servletCallmiePrenotazioni = new ServletCallmiePrenotazioni();
+        servletCallmiePrenotazioni.execute();
+
+
+    }
+
+    public void getJsonStorico(String a) throws JSONException, IOException {
+        CallStorico(a);
+    }
+
+    public void CallStorico(String a) {
+        Intent intent = new Intent(this, StoricoPrenotazioni.class);
+        intent.putExtra("a", a);
+        startActivity(intent);
     }
 
     public void miePrenotazioni() {

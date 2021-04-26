@@ -21,13 +21,14 @@ public class Prenotazioni {
         this.giorno = giorno;
     }
 
-    public Prenotazioni(String cognome, String nomeP, String orario, String giorno) {
+    public Prenotazioni(String idPrenotazione, String cognome, String nomeP, String orario, String giorno, String idCorso) {
+        this.idPrenotazione = idPrenotazione;
         this.cognome = cognome;
         this.nomeP = nomeP;
         this.orario = orario;
         this.giorno = giorno;
+        this.idCorso = idCorso;
     }
-
 
 
     public String getIdDocente() {
