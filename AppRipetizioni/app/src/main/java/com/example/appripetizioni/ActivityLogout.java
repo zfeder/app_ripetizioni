@@ -72,9 +72,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletLogin?azione=logout";
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletLogin?azione=logout";
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletLogin?azione=logout";
-                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletLogin?azione=logout";
+                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletLogin?azione=logout";
 
                     //connessione
                     //specifico i dati che voglio mandare direttamente nella chiamata
@@ -131,9 +131,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getCalendario" + "&" + "value=" + s;
-                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
+                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
 
 
 
@@ -211,9 +211,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getMateria";
-                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getMateria";
 
 
 
@@ -266,7 +266,7 @@ public class ActivityLogout extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch(item.getItemId()) {
                     case R.id.one:
-                        getMiePrenotazioni(v);
+                        prenotazioniAttive(v);
                         return true;
                     case R.id.two:
                         storicoPrenotazioni(v);
@@ -279,10 +279,9 @@ public class ActivityLogout extends AppCompatActivity {
         popup.show();
     }
 
-    /* public void prenotazioniAttive(View view) {
-        Intent intent = new Intent(this, PrenotazioniAttive.class);
-        startActivity(intent);
-    } */
+     public void prenotazioniAttive(View view) {
+         miePrenotazioni();
+    }
 
     public void storicoPrenotazioni(View view) {
         Intent intent2 = new Intent(this, StoricoPrenotazioni.class);
@@ -317,9 +316,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=miePrenotazioni";
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=miePrenotazioni";
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getCalendario" + "&" + "value=" + s;
-                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletShow?azione=miePrenotazioni";
+                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletShow?azione=miePrenotazioni";
 
 
 
@@ -361,10 +360,6 @@ public class ActivityLogout extends AppCompatActivity {
         Intent intent = new Intent(this, PrenotazioniAttive.class);
         intent.putExtra("a", a);
         startActivity(intent);
-    }
-
-    public void getMiePrenotazioni (View v) {
-        miePrenotazioni();
     }
 
 

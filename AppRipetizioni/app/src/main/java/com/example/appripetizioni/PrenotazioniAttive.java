@@ -17,7 +17,7 @@ public class PrenotazioniAttive extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mie_prenotazione);
+        setContentView(R.layout.activity_prenotazioni_attive);
         Intent intent = getIntent();
         String a = intent.getExtras().getString("a");
 

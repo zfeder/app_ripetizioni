@@ -12,6 +12,8 @@ import android.widget.TextView;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.net.CookieHandler;
+import java.net.CookieManager;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
@@ -55,9 +57,12 @@ public class ActivityLogin extends AppCompatActivity {
                     String passwordString = password.getText().toString();
                     Log.d(usernameString, passwordString);
 
-                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
-                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
+                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
+
+                    CookieManager cookieManager = new CookieManager();
+                    CookieHandler.setDefault(cookieManager);
 
 
                     //connessione
