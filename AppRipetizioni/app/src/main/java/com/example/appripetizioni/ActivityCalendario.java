@@ -115,8 +115,8 @@ public class ActivityCalendario extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=Prenota" + "&" + "idPrenotazione=" + a;
-                    //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletLogin?azione=login" + "&" + "utente=" + usernameString + "&" +  "password=" + passwordString;
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=Prenota" + "&" + "idPrenotazione=" + a;
+                    String urll = "http://192.168.1.138:8080/Ripetizioni/ServletShow?azione=Prenota" + "&" + "idPrenotazione=" + a;
                     //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletShow?azione=Prenota" + "&" + "idPrenotazione=" + a;
 
                     //connessione

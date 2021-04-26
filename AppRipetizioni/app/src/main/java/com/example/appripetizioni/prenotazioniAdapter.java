@@ -38,11 +38,11 @@ public class prenotazioniAdapter extends ArrayAdapter<  Prenotazioni> {
         TextView cognomeTv = (TextView) listItemView.findViewById(R.id.cognome);
         cognomeTv.setText(prenotazione.getCognome());
 
-        TextView orarioTv = (TextView) listItemView.findViewById(R.id.orario);
-        orarioTv.setText(prenotazione.getGiorno());
+        TextView giornoTv = (TextView) listItemView.findViewById(R.id.giorno);
+        giornoTv.setText(prenotazione.getGiorno());
 
-        TextView dataTv = (TextView) listItemView.findViewById(R.id.data);
-        dataTv.setText(prenotazione.getOrario());
+        TextView orarioTv = (TextView) listItemView.findViewById(R.id.orario);
+        orarioTv.setText(prenotazione.getOrario());
 
         Button materiaTv = (Button) listItemView.findViewById(R.id.materia);
         materiaTv.setTag(prenotazione.getIdPrenotazione());

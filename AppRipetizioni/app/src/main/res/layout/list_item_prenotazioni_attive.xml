@@ -1,82 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="170dp"
+    android:layout_height="80dp"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
     android:minHeight="?android:attr/listPreferredItemHeight"
-    android:orientation="horizontal"
     android:padding="1dp"
     android:weightSum="3">
 
-    <TextView
-        android:id="@+id/nome"
-        android:layout_width="0dp"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:minHeight="?android:attr/listPreferredItemHeight"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/nome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.46"
+            android:layout_marginStart="6dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="19sp"
+            android:textStyle="italic"
+            tools:text="Nome" />
+
+        <TextView
+            android:id="@+id/cognome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.47"
+            android:textColor="@color/colorPrimary"
+            android:textSize="19sp"
+            android:textStyle="italic"
+            tools:text="Cognome" />
+
+        <TextView
+            android:id="@+id/giorno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:textColor="@color/colorPrimary"
+            android:textSize="19sp"
+            android:textStyle="italic"
+            tools:text="Giorno" />
+
+        <TextView
+            android:id="@+id/orario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:textColor="@color/colorPrimary"
+            android:textSize="19sp"
+            android:textStyle="italic"
+            tools:text="Orario" />
+
+        <TextView
+            android:id="@+id/materia"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_weight="0.8"
+            android:textColor="@color/colorPrimary"
+            android:textSize="19sp"
+            android:textStyle="italic"
+            tools:text="Materia" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0.7"
-        android:layout_marginStart="6dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="19sp"
-        android:textStyle="italic"
-        tools:text="Nome" />
+        android:orientation="horizontal"
+        android:layout_marginStart="110dp">
 
-    <TextView
-        android:id="@+id/cognome"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.7"
-        android:textColor="@color/colorPrimary"
-        android:textSize="19sp"
-        android:textStyle="italic"
-        tools:text="Cognome" />
+        <Button
+            android:id="@+id/svolta"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginLeft="2dp"
+            android:text="Svolta"
+            android:freezesText="true"
+            android:onClick="svolta"
+            android:textSize="10sp">
+        </Button>
 
+        <Button
+            android:id="@+id/disdici"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginLeft="2dp"
+            android:text="Disdici"
+            android:freezesText="true"
+            android:onClick="disdici"
+            android:textSize="10sp">
+        </Button>
 
-    <TextView
-        android:id="@+id/orario"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.99"
-        android:textColor="@color/colorPrimary"
-        android:textSize="19sp"
-        android:textStyle="italic"
-        tools:text="Orario" />
-
-
-
-    <TextView
-        android:id="@+id/data"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.6"
-        android:textColor="@color/colorPrimary"
-        android:textSize="19sp"
-        android:textStyle="italic"
-        tools:text="Data" />
-
-    <Button
-        android:id="@+id/svolta"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_marginLeft="2dp"
-        android:text="Svolta"
-        android:freezesText="true"
-        android:onClick="svolta"
-        android:textSize="10sp">
-
-    </Button>
-
-
-    <Button
-        android:id="@+id/disdici"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_marginLeft="2dp"
-        android:text="disdici"
-        android:freezesText="true"
-        android:onClick="disdici"
-        android:textSize="10sp">
-
-    </Button>
-
+    </LinearLayout>
 
 </LinearLayout>
+
+

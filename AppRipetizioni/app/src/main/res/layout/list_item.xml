@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -32,26 +33,26 @@
 
 
     <TextView
-        android:id="@+id/orario"
+        android:id="@+id/giorno"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.99"
         android:textColor="@color/colorPrimary"
         android:textSize="19sp"
         android:textStyle="italic"
-        tools:text="Orario" />
+        tools:text="Giorno" />
 
 
 
     <TextView
-        android:id="@+id/data"
+        android:id="@+id/orario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.6"
         android:textColor="@color/colorPrimary"
         android:textSize="19sp"
         android:textStyle="italic"
-        tools:text="Data" />
+        tools:text="Orario" />
 
     <Button
         android:id="@+id/materia"
