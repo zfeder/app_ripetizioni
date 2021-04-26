@@ -279,7 +279,7 @@ public class ActivityLogout extends AppCompatActivity {
         popup.show();
     }
 
-     public void prenotazioniAttive(View view) {
+    public void prenotazioniAttive(View view) {
          miePrenotazioni();
     }
 
@@ -316,7 +316,7 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=miePrenotazioni";
+                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=miePrenotazioni2";
                     //String urll = "http://192.168.1.183:8080/Ripetizioni/ServletJSON?azione=getCalendario" + "&" + "value=" + s;
                     //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletShow?azione=miePrenotazioni";
 

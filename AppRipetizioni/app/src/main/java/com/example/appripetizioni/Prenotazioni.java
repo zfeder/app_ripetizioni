@@ -21,6 +21,13 @@ public class Prenotazioni {
         this.giorno = giorno;
     }
 
+    public Prenotazioni(String cognome, String nomeP, String orario, String giorno) {
+        this.cognome = cognome;
+        this.nomeP = nomeP;
+        this.orario = orario;
+        this.giorno = giorno;
+    }
+
 
 
     public String getIdDocente() {

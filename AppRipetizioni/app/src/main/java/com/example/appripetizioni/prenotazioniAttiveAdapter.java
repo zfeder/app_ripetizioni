@@ -44,8 +44,8 @@ public class prenotazioniAttiveAdapter extends ArrayAdapter<Prenotazioni> {
         TextView dataTv = (TextView) listItemView.findViewById(R.id.data);
         dataTv.setText(prenotazione.getOrario());
 
-        Button materiaTv = (Button) listItemView.findViewById(R.id.materia);
-        materiaTv.setTag(prenotazione.getIdPrenotazione());
+      /*  Button materiaTv = (Button) listItemView.findViewById(R.id.materia);
+        materiaTv.setTag(prenotazione.getIdPrenotazione()); */
 
 
 
