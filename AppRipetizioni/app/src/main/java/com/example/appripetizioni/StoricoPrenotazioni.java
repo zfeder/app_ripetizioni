@@ -59,10 +59,12 @@ public class StoricoPrenotazioni extends AppCompatActivity {
                 String data = jsonObject.getString("giorno");
                 String idPrenotazione = jsonObject.getString("idPrenotazione");
                 String idCorso = jsonObject.getString("idCorso");
+                String stato = jsonObject.getString("stato");
 
 
 
-                Prenotazioni prenotalv = new Prenotazioni(idPrenotazione, cognome, nome, orario, data, idCorso);
+
+                Prenotazioni prenotalv = new Prenotazioni(idPrenotazione, cognome, nome, orario, data, idCorso, stato);
 
                 prenota.add(prenotalv);
 

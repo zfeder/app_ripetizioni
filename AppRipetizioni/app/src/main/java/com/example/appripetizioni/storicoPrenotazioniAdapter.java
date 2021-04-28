@@ -44,8 +44,12 @@ public class storicoPrenotazioniAdapter extends ArrayAdapter<Prenotazioni> {
         TextView dataTv = (TextView) listItemView.findViewById(R.id.data);
         dataTv.setText(prenotazione.getOrario());
 
-     /*   TextView materiaTv = (TextView) listItemView.findViewById(R.id.materia);
-        materiaTv.setText(prenotazione.getIdCorso()); */
+        TextView statoTv = (TextView) listItemView.findViewById(R.id.stato);
+        statoTv.setText(prenotazione.getStato());
+
+        TextView materiaTv = (TextView) listItemView.findViewById(R.id.materia);
+        materiaTv.setText(prenotazione.getIdCorso());
+
 
         return listItemView;
     }

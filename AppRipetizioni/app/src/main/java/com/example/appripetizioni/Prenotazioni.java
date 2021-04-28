@@ -30,6 +30,16 @@ public class Prenotazioni {
         this.idCorso = idCorso;
     }
 
+    public Prenotazioni(String idPrenotazione, String cognome, String nomeP, String orario, String giorno, String idCorso, String stato) {
+        this.idPrenotazione = idPrenotazione;
+        this.cognome = cognome;
+        this.nomeP = nomeP;
+        this.orario = orario;
+        this.giorno = giorno;
+        this.idCorso = idCorso;
+        this.stato = stato;
+    }
+
 
     public String getIdDocente() {
         return idDocente;
