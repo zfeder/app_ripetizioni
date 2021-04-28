@@ -12,10 +12,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-public class prenotazioniAdapter extends ArrayAdapter<  Prenotazioni> {
+public class prenotazioniLoginAdapter extends ArrayAdapter<  Prenotazioni> {
 
 
-    public prenotazioniAdapter(Activity context, ArrayList<Prenotazioni> carsDetails){
+    public prenotazioniLoginAdapter(Activity context, ArrayList<Prenotazioni> carsDetails){
         super(context, 0, carsDetails);
     }
 
@@ -26,7 +26,7 @@ public class prenotazioniAdapter extends ArrayAdapter<  Prenotazioni> {
         View listItemView = convertView;
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.list_item, parent, false
+                    R.layout.list_item_login, parent, false
             );
         }
 
@@ -43,9 +43,6 @@ public class prenotazioniAdapter extends ArrayAdapter<  Prenotazioni> {
 
         TextView orarioTv = (TextView) listItemView.findViewById(R.id.orario);
         orarioTv.setText(prenotazione.getOrario());
-
-        Button materiaTv = (Button) listItemView.findViewById(R.id.materia);
-        materiaTv.setTag(prenotazione.getIdPrenotazione());
 
 
         return listItemView;

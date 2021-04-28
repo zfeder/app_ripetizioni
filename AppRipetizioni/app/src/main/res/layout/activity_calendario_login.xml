@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <TextView
+        android:id="@+id/materia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="MATERIA"
+        android:textSize="30sp"
+        android:textColor="@color/colorAccent">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_weight="0.8"
+        android:text="NOME"
+        android:textColor="@color/colorAccent">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="100dp"
+        android:layout_weight="0.6"
+        android:text="COGNOME"
+        android:textColor="@color/colorAccent">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="55dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="100dp"
+        android:layout_weight="0.6"
+        android:text="GIORNO"
+        android:textColor="@color/colorAccent">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="55dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="100dp"
+        android:layout_weight="0.6"
+        android:text="ORARIO"
+        android:textColor="@color/colorAccent">
+    </TextView>
+
+
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/lv1"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_marginTop="130dp">
+    </ListView>
+
+</RelativeLayout>

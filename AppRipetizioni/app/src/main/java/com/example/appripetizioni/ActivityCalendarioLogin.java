@@ -26,24 +26,16 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityCalendario extends AppCompatActivity {
+public class ActivityCalendarioLogin extends AppCompatActivity {
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendario);
+        setContentView(R.layout.activity_calendario_login);
         Intent intent = getIntent();
         String a = intent.getExtras().getString("a");
-        Boolean invi = intent.getExtras().getBoolean("invi");
-
-        if (invi) {
-            View b = findViewById(R.id.materia);
-            b.setVisibility(View.GONE);
-
-        }
-
         String nomeMateria = intent.getExtras().getString("nomeMateria");
 
         ArrayList<Prenotazioni> prenotazioni = null;
@@ -55,7 +47,7 @@ public class ActivityCalendario extends AppCompatActivity {
 
         ListView prenotazionilv = (ListView) findViewById(R.id.lv1);
 
-        prenotazioniAdapter adapter = new prenotazioniAdapter(this, prenotazioni);
+        prenotazioniLoginAdapter adapter = new prenotazioniLoginAdapter(this, prenotazioni);
 
         prenotazionilv.setAdapter(adapter);
 
