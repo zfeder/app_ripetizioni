@@ -14,6 +14,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,6 +46,20 @@ public class ActivityLogout extends AppCompatActivity {
         autoCompleteTextView = findViewById(R.id.autoCompletText);
         ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.option_item, lista);
         autoCompleteTextView.setAdapter(adapter);
+        Intent intent = getIntent();
+        String Stato = intent.getExtras().getString("Stato");
+
+        if (Stato.equals("Svolta")) {
+            (Toast.makeText(ActivityLogout.this, "Prenotazione segnata come svolta", Toast.LENGTH_SHORT)).show();
+        }
+
+        if (Stato.equals("Disdici")) {
+            (Toast.makeText(ActivityLogout.this, "Prenotazione disdetta con successo", Toast.LENGTH_SHORT)).show();
+        }
+
+        if (Stato.equals("Prenotata")) {
+            (Toast.makeText(ActivityLogout.this, "Prenotazione avvenuta con successo", Toast.LENGTH_SHORT)).show();
+        }
 
     }
 

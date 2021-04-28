@@ -81,6 +81,9 @@ public class PrenotazioniAttive extends AppCompatActivity {
         String a = b.getTag().toString();
         Log.e("Tag bottone", "" + a);//scrivvo sul log
         svoltaDB(a);
+        Intent intent = new Intent(this, ActivityLogout.class);
+        intent.putExtra("Stato", "Svolta");
+        startActivity(intent);
     }
 
     public void svoltaDB(String a){
@@ -140,6 +143,9 @@ public class PrenotazioniAttive extends AppCompatActivity {
         String a = b.getTag().toString();
         Log.e("Tag bottone", "" + a);//scrivvo sul log
         disdiciDB(a);
+        Intent intent = new Intent(this, ActivityLogout.class);
+        intent.putExtra("Stato", "Disdici");
+        startActivity(intent);
     }
 
     public void disdiciDB(String a){

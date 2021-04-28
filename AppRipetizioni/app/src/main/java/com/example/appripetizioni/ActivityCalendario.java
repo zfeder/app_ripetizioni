@@ -100,6 +100,9 @@ public class ActivityCalendario extends AppCompatActivity {
         String a = b.getTag().toString();
         Log.e("Tag bottone", "" + a);//scrivvo sul log
         prenotaDB(a);
+        Intent intent = new Intent(this, ActivityLogout.class);
+        intent.putExtra("Stato", "Prenotata");
+        startActivity(intent);
     }
 
     public void prenotaDB(String a){

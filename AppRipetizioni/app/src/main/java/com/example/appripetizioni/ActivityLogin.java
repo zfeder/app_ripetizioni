@@ -43,6 +43,7 @@ public class ActivityLogin extends AppCompatActivity {
                 Log.e("Stato","messaggio di risposta :"+ s);//scrivvo sul log
                 if (s.equals("Admin") || s.equals("Utente")) {
                     Intent intent = new Intent(getApplicationContext(), ActivityLogout.class);
+                    intent.putExtra("Stato", "");
                     startActivity(intent);
                 }
 
