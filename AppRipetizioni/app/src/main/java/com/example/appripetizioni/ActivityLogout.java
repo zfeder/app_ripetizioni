@@ -50,15 +50,15 @@ public class ActivityLogout extends AppCompatActivity {
         String Stato = intent.getExtras().getString("Stato");
 
         if (Stato.equals("Svolta")) {
-            (Toast.makeText(ActivityLogout.this, "Prenotazione segnata come svolta", Toast.LENGTH_SHORT)).show();
+            (Toast.makeText(ActivityLogout.this, "Prenotazione svolta con successo!", Toast.LENGTH_SHORT)).show();
         }
 
         if (Stato.equals("Disdici")) {
-            (Toast.makeText(ActivityLogout.this, "Prenotazione disdetta con successo", Toast.LENGTH_SHORT)).show();
+            (Toast.makeText(ActivityLogout.this, "Prenotazione disdetta con successo!", Toast.LENGTH_SHORT)).show();
         }
 
         if (Stato.equals("Prenotata")) {
-            (Toast.makeText(ActivityLogout.this, "Prenotazione avvenuta con successo", Toast.LENGTH_SHORT)).show();
+            (Toast.makeText(ActivityLogout.this, "Prenotazione avvenuta con successo!", Toast.LENGTH_SHORT)).show();
         }
 
     }
