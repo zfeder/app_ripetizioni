@@ -57,7 +57,7 @@
     <TextView
         android:layout_width="55dp"
         android:layout_height="38dp"
-        android:layout_marginStart="221dp"
+        android:layout_marginStart="226dp"
         android:layout_marginLeft="300dp"
         android:layout_marginTop="100dp"
         android:layout_weight="0.6"
@@ -68,7 +68,7 @@
     <TextView
         android:layout_width="60dp"
         android:layout_height="38dp"
-        android:layout_marginStart="300dp"
+        android:layout_marginStart="295dp"
         android:layout_marginLeft="300dp"
         android:layout_marginTop="100dp"
         android:layout_weight="0.6"

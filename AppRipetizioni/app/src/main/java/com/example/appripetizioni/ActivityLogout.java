@@ -87,9 +87,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletLogin?azione=logout";
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletLogin?azione=logout";
                     //String urll = "http://192.168.1.255:8080/Ripetizioni/ServletLogin?azione=logout";
-                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletLogin?azione=logout";
+                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletLogin?azione=logout";
 
                     //connessione
                     //specifico i dati che voglio mandare direttamente nella chiamata
@@ -146,9 +146,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
                     //String urll = "http://192.168.1.138:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
-                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
+                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getCalendario2"+ "&" + "value=" + s;
 
 
 
@@ -226,9 +226,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletJSON?azione=getMateria";
                     //String urll = "http://192.168.1.138:8080/Ripetizioni/ServletJSON?azione=getMateria";
-                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getMateria";
+                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletJSON?azione=getMateria";
 
 
 
@@ -328,9 +328,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=Storico";
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=Storico";
                     //String urll = "http://192.168.1.138:8080/Ripetizioni/ServletShow?azione=Storico";
-                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletShow?azione=Storico";
+                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletShow?azione=Storico";
 
 
 
@@ -402,9 +402,9 @@ public class ActivityLogout extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 try {
 
-                    String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=miePrenotazioni2";
+                    //String urll = "http://192.168.1.103:8080/Ripetizioni/ServletShow?azione=miePrenotazioni2";
                     //String urll = "http://192.168.1.138:8080/Ripetizioni/ServletShow?azione=miePrenotazioni2";
-                    //String urll = "http://192.168.1.236:8080/Ripetizioni/ServletShow?azione=miePrenotazioni2";
+                    String urll = "http://192.168.1.236:8080/Ripetizioni/ServletShow?azione=miePrenotazioni2";
 
 
 
